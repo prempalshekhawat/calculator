@@ -14,16 +14,12 @@ class Calculator extends React.Component {
     this.handleClick = this.handleClick.bind(this); 
   }
   handleClick(event){ 
-
-    // get the value from the target element (button) 
+ 
     const value = event.target.value; 
    
     switch (value) { 
       case '=': { 
-   
-        // if it's an equal sign, use the eval module 
-        // to evaluate the question ,convert the answer 
-        // (in number) to String 
+    
         if (this.state.question!=='') 
         { 
             var ans=''; 
@@ -46,8 +42,6 @@ class Calculator extends React.Component {
       } 
       case 'Clear': { 
    
-        // if it's the Clears sign, just clean our  
-        // question and answer in the state 
         this.setState({ question: '', answer: '' }); 
         break; 
       } 
@@ -60,8 +54,7 @@ class Calculator extends React.Component {
       } 
    
     default: { 
-   
-        // for every other command, update the answer in the state 
+  
         this.setState({ question: this.state.question += value}) 
         break; 
       } 
@@ -109,5 +102,4 @@ class Calculator extends React.Component {
   } 
 } 
   
-// Export Calculator Component. 
 export default Calculator;
